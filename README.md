@@ -74,7 +74,23 @@ Add this following rule:
             
 ## Supported tools
 * Prettier
-* Flow (below steps must be done in addition to normal flow installation and configuration)
+* ESLint (below steps must be done in addition to normal ESLint installation and configuration)
+   * Install eslint-plugin-html
+   
+            npm install --save-dev eslint-plugin-html
+            
+   * Add to your ESLint configuration
+
+            {
+                "plugins": [
+                    "html"
+                ],
+                rules: [
+                    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".html"] }]
+                ]
+            }
+            
+* Flow (below steps must be done in addition to normal Flow installation and configuration)
     * Install eslint-plugin-flowtype-errors
     
             npm install --save-dev eslint-plugin-flowtype-errors
@@ -100,22 +116,6 @@ Add this following rule:
             .
             </script>
     
-* ESLint (below steps must be done in addition to normal flow installation and configuration)
-   * Install eslint-plugin-html
-   
-            npm install --save-dev eslint-plugin-html
-            
-   * Add to your ESLint configuration
-
-            {
-                "plugins": [
-                    "html"
-                ],
-                rules: [
-                    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".html"] }]
-                ]
-            }      
-
 ## Tested IDEs/Editors
 * WebStorm
 
