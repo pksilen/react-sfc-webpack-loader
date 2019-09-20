@@ -1,15 +1,20 @@
 const loaderUtils = require('loader-utils');
 const htmlParser = require('node-html-parser');
 
-const getStylesLoader = require.resolve('./getStyle');
-const getJavaScriptLoader = require.resolve('./getJavaScript');
+const styleLoader = require.resolve('./styleLoader');
 
 module.exports = function(source) {
   const remainingRequest = loaderUtils.getRemainingRequest(this);
+  const rootElement = htmlParser.parse(source, { script: true });
+  const scriptElement = rootElement.querySelectorAll('script');
 
-  const rootElement = htmlParser.parse(source);
+  if (scriptElement.length !== 1) {
+    this.emitError(`There must exactly one <script>...</script> block in ${this.resource}`);
+    return '';
+  }
+
+  const scriptSource = scriptElement[0].rawText;
   const styleElement = rootElement.querySelectorAll('style');
-  let stylesImport = '';
 
   if (styleElement.length > 0) {
     if (styleElement.length > 1) {
@@ -25,16 +30,11 @@ module.exports = function(source) {
       [, styleSuffix] = matches;
     }
 
-    stylesImport = `import ${loaderUtils.stringifyRequest(
+    return `import ${loaderUtils.stringifyRequest(
       this,
-      `${this.resource}.${styleSuffix}!=!${getStylesLoader}!${remainingRequest}`
-    )};`;
+      `${this.resource}.${styleSuffix}!=!${styleLoader}!${remainingRequest}`
+    )};${scriptSource}`;
   }
 
-  const javascriptImport = `import ${loaderUtils.stringifyRequest(
-    this,
-    `${this.resource}.js!=!${getJavaScriptLoader}!${remainingRequest}`
-  )};`;
-
-  return `${stylesImport}${javascriptImport}`;
+  return scriptSource;
 };
