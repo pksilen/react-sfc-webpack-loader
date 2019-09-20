@@ -56,10 +56,11 @@ Define style type as follows:
     </style>
    
 ## Webpack configuration
+Have your normal Webpack configuration
 
 Have your normal rules for style loading depending on style type (CSS/SCSS/SASS/LESS/Stylus)
 
-Add this following rule:
+Only change needed is to add this following rule to Webpack configuration:
 
     module: {
         rules: [
