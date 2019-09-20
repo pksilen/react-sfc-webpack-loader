@@ -84,13 +84,17 @@ Add this following rule:
             {
                 "plugins": [
                     "html"
+                    .
+                    .
                 ],
                 rules: [
                     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".html"] }]
+                    .
+                    .
                 ]
             }
             
-* Flow (below steps must be done in addition to normal Flow installation and configuration)
+* Flow (Needs ESLint and below steps must be done in addition to normal Flow installation and configuration)
     * Install eslint-plugin-flowtype-errors
     
             npm install --save-dev eslint-plugin-flowtype-errors
@@ -98,11 +102,15 @@ Add this following rule:
     * Configure ESLint
     
             {
-                "plugins": [
+                "plugins": [            
                     "flowtype-errors"
+                    .
+                    .
                 ],
                 rules: [
                    "flowtype-errors/show-errors": 2
+                   .
+                   .
                 ]
             }                             
         
