@@ -84,13 +84,9 @@ Add this following rule:
             {
                 "plugins": [
                     "html"
-                    .
-                    .
                 ],
                 rules: [
                     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".html"] }]
-                    .
-                    .
                 ]
             }
             
@@ -104,13 +100,9 @@ Add this following rule:
             {
                 "plugins": [            
                     "flowtype-errors"
-                    .
-                    .
                 ],
                 rules: [
                    "flowtype-errors/show-errors": 2
-                   .
-                   .
                 ]
             }                             
         
