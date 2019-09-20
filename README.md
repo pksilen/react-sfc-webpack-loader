@@ -75,13 +75,30 @@ Add this following rule:
 ## Supported tools
 * Prettier
 * Flow
+    * Install eslint-plugin-flowtype-errors
     
-        <script>
-        // @flow
-        .
-        .
-        .
-        </script>
+            npm install --save-dev eslint-plugin-flowtype-errors
+            
+    * Configure ESLint
+    
+            {
+                "plugins": [
+                    "flowtype-errors"
+                ],
+                rules: [
+                   "flowtype-errors/show-errors": 2
+                ]
+            }                             
+        
+    * Enable flow usage in .html file
+    
+            // @flow
+            <script>
+            // @flow
+            .
+            .
+            .
+            </script>
     
 * ESLint
    * Install eslint-plugin-html
