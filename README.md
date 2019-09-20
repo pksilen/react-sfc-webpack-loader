@@ -14,7 +14,7 @@ Webpack loader for React Single File Components (SFC) inspired by [Vue SFCs]
        
 ## React Single File Component
 
-React Single File Component is implemented in a .html file where JavaScript is put inside a single <script>...</script> section
+React Single File Component (SFC) is implemented in a .html file where JavaScript is put inside a single <script>...</script> section
 and optional CSS is put inside a single (optional) <style>...</style> section
 
 ### Style types
@@ -98,6 +98,9 @@ Add this following rule:
                     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".html"] }]
                 ]
             }      
+
+## Tested IDEs/Editors
+* WebStorm
 
 ## Under construction
 * Scoped CSS / CSS Modules support
