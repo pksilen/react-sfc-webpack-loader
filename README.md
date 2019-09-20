@@ -1,4 +1,4 @@
-# React Single File Components (SFC) Loader
+# React Single File Components (SFC) Webpack Loader
 Webpack loader for React Single File Components (SFC) inspired by [Vue SFCs]
 
 [![version][version-badge]][package]
