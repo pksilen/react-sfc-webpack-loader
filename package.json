@@ -1,5 +1,5 @@
 {
-  "name": "react-sfc-loader",
+  "name": "react-sfc-webpack-loader",
   "version": "1.0.0",
   "description": "Webpack loader for Single file components (SFC) for React",
   "keywords": [
@@ -17,14 +17,14 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/pksilen/react-sfc-loader.git"
+    "url": "https://github.com/pksilen/react-sfc-webpack-loader.git"
   },
   "author": "Petri Silen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pksilen/react-sfc-loader/issues"
+    "url": "https://github.com/pksilen/react-sfc-webpack-loader/issues"
   },
-  "homepage": "https://github.com/pksilen/react-sfc-loader#readme",
+  "homepage": "https://github.com/pksilen/react-sfc-webpack-loader#readme",
   "devDependencies": {},
   "dependencies": {
     "loader-utils": "^1.2.3",

@@ -131,5 +131,5 @@ MIT License
 [license-badge]: https://img.shields.io/badge/license-MIT-green
 [license]: https://github.com/pksilen/react-sfc-webpack-loader/blob/master/LICENSE
 [version-badge]: https://img.shields.io/npm/v/react-sfc-webpack-loader.svg?style=flat-square
-[package]: https://www.npmjs.com/package/react-sfc-loader
+[package]: https://www.npmjs.com/package/react-sfc-webpack-loader
 [Vue SFCs]: https://vuejs.org/v2/guide/single-file-components.html
