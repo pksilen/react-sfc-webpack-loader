@@ -12,9 +12,99 @@ Webpack loader for React Single File Components (SFC) inspired by [Vue SFCs]
 ## Installation
     npm install --save-dev react-sfc-webpack-loader
        
-## Example usage
-   
+## React Single File Component
+
+React Single File Component is implemented in a .html file where JavaScript is put inside a single <script>...</script> section
+and optional CSS is put inside a single (optional) <style>...</style> section
+
+### Style types
+Define style type as follows:
     
+  CSS
+  
+    <style type="text/css">
+        ...
+        ..
+    </style>
+  
+  SCSS
+    
+    <style type="text/scss">
+        ...
+        ..
+    </style>
+  
+  SASS
+    
+    <style type="text/sass">
+        ...
+        ..
+    </style>
+  
+  LESS
+    
+    <style type="text/less">
+      ...
+      ..
+    </style>
+  
+  Stylus
+    
+    <style type="text/styl">
+      ...
+      ..
+    </style>
+   
+## Webpack configuration
+
+Have your normal rules for style loading depending on style type (CSS/SCSS/SASS/LESS/Stylus)
+
+Add this following rule:
+
+    module: {
+        rules: [
+          {
+            test: /\.html$/,
+            exclude: /node_modules/,
+            use: ['babel-loader', 'react-sfc-webpack-loader']
+          },
+          .
+          .
+          .
+            
+## Supported tools
+* Prettier
+* Flow
+    
+        <script>
+        // @flow
+        .
+        .
+        .
+        </script>
+    
+* ESLint
+   * Install eslint-plugin-html
+   
+            npm install --save-dev eslint-plugin-html
+            
+   * Add to your ESLint configuration
+
+            {
+                "plugins": [
+                    "html"
+                ],
+                rules: [
+                    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".html"] }]
+                ]
+            }      
+
+## Under construction
+* Scoped CSS / CSS Modules support
+
+## Not supported
+* TypeScript
+  
 ## License
 MIT License
 
