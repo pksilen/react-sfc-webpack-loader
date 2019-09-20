@@ -73,8 +73,8 @@ Add this following rule:
           .
             
 ## Supported tools
-* Prettier
-* ESLint (below steps must be done in addition to normal ESLint installation and configuration)
+* [Prettier]
+* [ESLint] (below steps must be done in addition to normal ESLint installation and configuration)
    * Install eslint-plugin-html
    
             npm install --save-dev eslint-plugin-html
@@ -90,7 +90,7 @@ Add this following rule:
                 ]
             }
             
-* Flow (Needs ESLint and below steps must be done in addition to normal Flow installation and configuration)
+* [Flow] (Needs ESLint and below steps must be done in addition to normal Flow installation and configuration)
     * Install eslint-plugin-flowtype-errors
     
             npm install --save-dev eslint-plugin-flowtype-errors
@@ -133,3 +133,6 @@ MIT License
 [version-badge]: https://img.shields.io/npm/v/react-sfc-webpack-loader.svg?style=flat-square
 [package]: https://www.npmjs.com/package/react-sfc-webpack-loader
 [Vue SFCs]: https://vuejs.org/v2/guide/single-file-components.html
+[Prettier]: https://prettier.io/
+[ESLint]: https://eslint.org/
+[Flow]: https://flow.org/
