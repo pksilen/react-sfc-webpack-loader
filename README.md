@@ -4,7 +4,7 @@ Webpack loader for React Single File Components (SFC) inspired by [Vue SFCs]
 [![version][version-badge]][package]
 [![MIT License][license-badge]][license]
 
-![React Single File Component Sample](https://raw.githubusercontent.com/pksilen/react-sfc-loader/master/assets/react-sfc-sample.png)
+![React Single File Component Sample](https://raw.githubusercontent.com/pksilen/react-sfc-webpack-loader/master/assets/react-sfc-sample.png)
 
 ## Prerequisites
     "webpack": "^4.0.0",
