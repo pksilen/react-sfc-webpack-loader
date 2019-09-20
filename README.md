@@ -74,7 +74,7 @@ Add this following rule:
             
 ## Supported tools
 * Prettier
-* Flow
+* Flow (below steps must be done in addition to normal flow installation and configuration)
     * Install eslint-plugin-flowtype-errors
     
             npm install --save-dev eslint-plugin-flowtype-errors
@@ -100,7 +100,7 @@ Add this following rule:
             .
             </script>
     
-* ESLint
+* ESLint (below steps must be done in addition to normal flow installation and configuration)
    * Install eslint-plugin-html
    
             npm install --save-dev eslint-plugin-html
