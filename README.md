@@ -63,7 +63,7 @@ Define style type as follows:
   
   Stylus
     
-    <style type="text/styl">
+    <style type="text/stylus">
       ...
       ..
     </style>
