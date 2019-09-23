@@ -2,6 +2,8 @@
 Webpack loader for React Single File Components (SFC) inspired by [Vue SFCs]
 
 [![version][version-badge]][package]
+[![build][build]][circleci]
+[![coverage][coverage]][codecov]
 [![MIT License][license-badge]][license]
 
 ![React Single File Component Sample](https://raw.githubusercontent.com/pksilen/react-sfc-webpack-loader/master/assets/react-sfc-sample.png)
@@ -133,6 +135,10 @@ MIT License
 [license]: https://github.com/pksilen/react-sfc-webpack-loader/blob/master/LICENSE
 [version-badge]: https://img.shields.io/npm/v/react-sfc-webpack-loader.svg?style=flat-square
 [package]: https://www.npmjs.com/package/react-sfc-webpack-loader
+[build]: https://img.shields.io/circleci/project/github/pksilen/react-sfc-webpack-loader/master.svg?style=flat-square
+[circleci]: https://circleci.com/gh/pksilen/react-sfc-webpack-loader/tree/master
+[coverage]: https://img.shields.io/codecov/c/github/pksilen/react-sfc-webpack-loader/master.svg?style=flat-square
+[codecov]: https://codecov.io/gh/pksilen/react-sfc-webpack-loader
 [Vue SFCs]: https://vuejs.org/v2/guide/single-file-components.html
 [Prettier]: https://prettier.io/
 [ESLint]: https://eslint.org/
