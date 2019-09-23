@@ -54,8 +54,6 @@ describe('loader', () => {
   });
 
   it('should return style import with specified style file name suffix', () => {
-    const requireResolveSpy = jest.spyOn(require, 'resolve');
-    requireResolveSpy.mockReturnValue('styleLoader.js');
     const scriptSource = loader.call(
       loaderContext,
       '\n<script>const a = 1;</script>\n<style type="text/scss">a</style>'
@@ -65,8 +63,6 @@ describe('loader', () => {
   });
 
   it('should return CSS Module style import if scoped attribute is specified for style tag ', () => {
-    const requireResolveSpy = jest.spyOn(require, 'resolve');
-    requireResolveSpy.mockReturnValue('styleLoader.js');
     const scriptSource = loader.call(
       loaderContext,
       '\n<script>const a = 1;</script>\n<style scoped type="text/scss">a</style>'
@@ -76,8 +72,6 @@ describe('loader', () => {
   });
 
   it('should return Stylus style import with .styl file name suffix', () => {
-    const requireResolveSpy = jest.spyOn(require, 'resolve');
-    requireResolveSpy.mockReturnValue('styleLoader.js');
     const scriptSource = loader.call(
       loaderContext,
       '\n<script>const a = 1;</script>\n<style type="text/stylus">a</style>'
