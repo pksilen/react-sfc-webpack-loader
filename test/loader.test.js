@@ -71,7 +71,7 @@ describe('loader', () => {
     expect(scriptSource).toBe('import styles from "test.html.module.scss!=!./styleLoader.js!test.html";const a = 1;');
   });
 
-  it('should return Stylus style import with .styl file name suffix', () => {
+  it('should return Stylus type style import with .styl file name suffix', () => {
     const scriptSource = loader.call(
       loaderContext,
       '\n<script>const a = 1;</script>\n<style type="text/stylus">a</style>'
