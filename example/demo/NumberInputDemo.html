@@ -1,0 +1,56 @@
+// @flow
+
+<!--suppress FlowJSFlagCommentPlacement -->
+<script>
+  // @flow
+  /*global styles*/
+  import React from 'react';
+  import { render } from 'react-dom';
+  import type { Element } from 'react';
+  import NumberInput from '../src/NumberInput';
+
+  type State = {
+    value: string
+  };
+
+  export default class NumberInputDemo extends React.Component<{}, State> {
+    state: State = {
+      value: '0'
+    };
+
+    changeValue = (newValue: string) => {
+      this.setState({
+        value: newValue
+      });
+    };
+
+    render(): Element<*> {
+      const { value } = this.state;
+
+      return (
+        <div className={styles.demo}>
+          <h1 className={styles.heading}>NumberInput Demo</h1>
+          <NumberInput value={value} onChange={this.changeValue} />
+        </div>
+      );
+    }
+  }
+
+  const rootElement = document.getElementById('app-root');
+
+  if (rootElement) {
+    render(<NumberInputDemo />, rootElement);
+  }
+
+</script>
+
+<style scoped type="text/scss">
+  .demo {
+    margin-left: 50px;
+
+    .heading {
+      color: red;
+      font-size: 24px;
+    }
+  }
+</style>

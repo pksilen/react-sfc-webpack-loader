@@ -19,10 +19,21 @@ Webpack loader for React Single File Components (SFC) inspired by [Vue SFCs]
 React Single File Component (SFC) is implemented in a .html file where JavaScript is put inside a single <script>...</script> section
 and optional CSS is put inside a single (optional) <style>...</style> section
 
+## Example
+
+See example in [example directory]
+
 ### Style types
 Define style type as follows:
     
   CSS
+  
+     <style>
+        ...
+        ..
+    </style>
+  
+  or
   
     <style type="text/css">
         ...
@@ -161,3 +172,4 @@ MIT License
 [Prettier]: https://prettier.io/
 [ESLint]: https://eslint.org/
 [Flow]: https://flow.org/
+[example directory]: https://github.com/pksilen/react-sfc-webpack-loader/blob/master/example
