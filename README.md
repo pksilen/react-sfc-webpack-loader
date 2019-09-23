@@ -77,7 +77,7 @@ CSS Modules support is enabled with scoped attribute:
         ..
     </style>
 
-Your CSS rule for CSS modules in Webpack config must test file extension .module.<style-type>, e.g. .module.css or .module.scss, for example:
+Your CSS rule for CSS modules in Webpack config must test file extension .module.&lt;style-type&gt;, e.g. .module.css or .module.scss, for example:
 
     {
         test: /\.module.scss$/,
