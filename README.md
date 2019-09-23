@@ -68,6 +68,25 @@ Define style type as follows:
       ..
     </style>
    
+## CSS Modules
+
+CSS Modules support is enabled with scoped attribute:
+    
+    <style scoped type="text/scss">
+        ...
+        ..
+    </style>
+
+Your CSS rule for CSS modules in Webpack config must test file extension .module.<style-type>, e.g. .module.css or .module.scss
+
+Your CSS is available in .html files through object named "styles", for example:
+
+    <div className={styles.demo}>
+   
+If you use ESLint and get error of undefined 'styles', add following line to .html file:
+
+      /*global styles*/
+   
 ## Webpack configuration
 
 ### Create React App
@@ -150,9 +169,6 @@ Only change needed is to add this following rule to Webpack configuration:
     
 ## Tested IDEs/Editors
 * WebStorm
-
-## Under construction
-* Scoped CSS / CSS Modules support
 
 ## Not supported
 * TypeScript
