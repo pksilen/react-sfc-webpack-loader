@@ -58,6 +58,27 @@ Define style type as follows:
     </style>
    
 ## Webpack configuration
+
+### Create React App
+If you have created your React app with Create React App, you need to eject it by running:
+    
+    npm eject
+    
+   or
+   
+    yarn eject
+
+Add following rule to rules array in config/webpack.config.js file:
+
+    module: {
+        rules: [
+          {
+            test: /\.html$/,
+            exclude: /node_modules/,
+            use: ['babel-loader', 'react-sfc-webpack-loader']
+          }
+          
+### Manual configuration
 Have your normal Webpack configuration
 
 Have your normal rules for style loading depending on style type (CSS/SCSS/SASS/LESS/Stylus)
@@ -70,10 +91,7 @@ Only change needed is to add this following rule to Webpack configuration:
             test: /\.html$/,
             exclude: /node_modules/,
             use: ['babel-loader', 'react-sfc-webpack-loader']
-          },
-          .
-          .
-          .
+          }
             
 ## Supported tools
 * [Prettier]

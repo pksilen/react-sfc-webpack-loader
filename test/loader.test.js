@@ -38,7 +38,7 @@ describe('loader', () => {
     const scriptSource = loader.call(loaderContext, '\n<script>const a = 1;</script>\n<style>a</style>');
 
     console.log(scriptSource);
-    expect(scriptSource).toBe('import "test.html.css!=!./styleLoader.js!test.html";const a = 1;');
+    expect(scriptSource).toBe('import styles from "test.html.css!=!./styleLoader.js!test.html";const a = 1;');
   });
 
   it('should emit error if more than one style block in source', () => {
@@ -61,7 +61,7 @@ describe('loader', () => {
       '\n<script>const a = 1;</script>\n<style type="text/scss">a</style>'
     );
 
-    expect(scriptSource).toBe('import "test.html.scss!=!./styleLoader.js!test.html";const a = 1;');
+    expect(scriptSource).toBe('import styles from "test.html.scss!=!./styleLoader.js!test.html";const a = 1;');
   });
 
   it('should return CSS Module style import if scoped attribute is specified for style tag ', () => {
@@ -72,7 +72,7 @@ describe('loader', () => {
       '\n<script>const a = 1;</script>\n<style scoped type="text/scss">a</style>'
     );
 
-    expect(scriptSource).toBe('import "test.html.module.scss!=!./styleLoader.js!test.html";const a = 1;');
+    expect(scriptSource).toBe('import styles from "test.html.module.scss!=!./styleLoader.js!test.html";const a = 1;');
   });
 
   it('should return Stylus style import with .styl file name suffix', () => {
@@ -83,6 +83,6 @@ describe('loader', () => {
       '\n<script>const a = 1;</script>\n<style type="text/stylus">a</style>'
     );
 
-    expect(scriptSource).toBe('import "test.html.styl!=!./styleLoader.js!test.html";const a = 1;');
+    expect(scriptSource).toBe('import styles from "test.html.styl!=!./styleLoader.js!test.html";const a = 1;');
   });
 });

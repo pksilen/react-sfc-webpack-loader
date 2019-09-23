@@ -39,7 +39,7 @@ module.exports = function(source) {
       styleSuffix = `module.${styleSuffix}`;
     }
 
-    return `import ${loaderUtils.stringifyRequest(
+    return `import styles from ${loaderUtils.stringifyRequest(
       this,
       `${this.resource}.${styleSuffix}!=!${styleLoader}!${remainingRequest}`
     )};${scriptSource}`;
