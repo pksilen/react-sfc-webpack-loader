@@ -1,12 +1,13 @@
 const loaderUtils = require('loader-utils');
 const htmlParser = require('node-html-parser');
 
-const styleLoader = process.env.NODE_ENV === 'test' ? './styleLoader.js' : require.resolve('./styleLoader');
+const styleLoaderPathName =
+  process.env.NODE_ENV === 'test' ? './styleLoader.js' : require.resolve('./styleLoader');
 
-module.exports = function(source) {
+module.exports = function(htmlSource) {
   const remainingRequest = loaderUtils.getRemainingRequest(this);
-  const rootElement = htmlParser.parse(source, { script: true });
-  const scriptElements = rootElement.querySelectorAll('script');
+  const htmlRootElement = htmlParser.parse(htmlSource, { script: true });
+  const scriptElements = htmlRootElement.querySelectorAll('script');
 
   if (scriptElements.length !== 1) {
     this.emitError(`There must exactly one <script>...</script> block in ${this.resource}`);
@@ -14,7 +15,7 @@ module.exports = function(source) {
   }
 
   const scriptSource = scriptElements[0].rawText;
-  const styleElements = rootElement.querySelectorAll('style');
+  const styleElements = htmlRootElement.querySelectorAll('style');
 
   if (styleElements.length > 0) {
     if (styleElements.length > 1) {
@@ -22,27 +23,31 @@ module.exports = function(source) {
       return '';
     }
 
-    let styleSuffix = 'css';
+    let styleType = 'css';
     const { rawAttrs } = styleElements[0];
-    const styleTypeMatches = rawAttrs.match(/\s*type\s*=\s*"\s*text\s*\/\s*(\w*)\s*"/);
+    const styleTypeAttributeMatches = rawAttrs.match(/\s*type\s*=\s*"\s*text\s*\/\s*(\w*)\s*"/);
 
-    if (styleTypeMatches) {
-      [, styleSuffix] = styleTypeMatches;
+    if (styleTypeAttributeMatches) {
+      [, styleType] = styleTypeAttributeMatches;
 
-      if (styleSuffix === 'stylus') {
-        styleSuffix = 'styl';
+      if (styleType === 'stylus') {
+        styleType = 'styl';
       }
     }
 
-    const scopedMatches = rawAttrs.match(/\s*scoped\s*/);
-    if (scopedMatches) {
-      styleSuffix = `module.${styleSuffix}`;
+    const scopedAttributeMatches = rawAttrs.match(/\s*scoped\s*/);
+    if (scopedAttributeMatches) {
+      styleType = `module.${styleType}`;
     }
 
-    return `import styles from ${loaderUtils.stringifyRequest(
+    const styleFileName = `${this.resource}.${styleType}`;
+    const styleInlineMatchResource = loaderUtils.stringifyRequest(
       this,
-      `${this.resource}.${styleSuffix}!=!${styleLoader}!${remainingRequest}`
-    )};${scriptSource}`;
+      `${styleFileName}!=!${styleLoaderPathName}!${remainingRequest}`
+    );
+    const styleRequest = `import styles from ${styleInlineMatchResource}`;
+
+    return `${styleRequest};${scriptSource}`;
   }
 
   return scriptSource;
