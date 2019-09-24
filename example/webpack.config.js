@@ -2,10 +2,10 @@ const path = require('path');
 
 const config = {
   entry: {
-    demo: './demo/NumberInputDemo.html'
+    index: './src/index.js'
   },
   output: {
-    path: path.resolve(__dirname, 'demo'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].bundle.js'
   },
   module: {
@@ -47,7 +47,7 @@ const config = {
   },
   mode: 'production',
   devServer: {
-    contentBase: path.resolve(__dirname, 'demo'),
+    contentBase: path.resolve(__dirname, 'build'),
     compress: false,
     port: 3000
   }

@@ -5,15 +5,14 @@
   // @flow
   /*global styles*/
   import React from 'react';
-  import { render } from 'react-dom';
   import type { Element } from 'react';
-  import NumberInput from '../src/NumberInput';
+  import NumberInput from './NumberInput';
 
   type State = {
     value: string
   };
 
-  export default class NumberInputDemo extends React.Component<{}, State> {
+  export default class App extends React.Component<{}, State> {
     state: State = {
       value: '0'
     };
@@ -35,13 +34,6 @@
       );
     }
   }
-
-  const rootElement = document.getElementById('app-root');
-
-  if (rootElement) {
-    render(<NumberInputDemo />, rootElement);
-  }
-
 </script>
 
 <style scoped type="text/scss">
