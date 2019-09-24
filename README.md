@@ -143,6 +143,11 @@ Only change needed is to add this following rule to Webpack configuration:
             
 ## Supported tools
 * [Prettier]
+* [StyleLint]
+    Use for example following npm script in your package.json:
+    
+        "stylelint": "stylelint src/**/*.html",
+    
 * [ESLint] (below steps must be done in addition to normal ESLint installation and configuration)
    * Install eslint-plugin-html
    
@@ -207,3 +212,4 @@ MIT License
 [ESLint]: https://eslint.org/
 [Flow]: https://flow.org/
 [example directory]: https://github.com/pksilen/react-sfc-webpack-loader/blob/master/example
+[StyleLint]: https://stylelint.io/
