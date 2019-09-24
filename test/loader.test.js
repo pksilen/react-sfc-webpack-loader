@@ -27,7 +27,7 @@ describe('loader', () => {
     );
 
     expect(loaderContext.emitError).toHaveBeenCalledWith(
-      'There must exactly one <script>...</script> block in test.html'
+      'There must be exactly one <script>...</script> block in test.html'
     );
     expect(scriptSource).toBe('');
   });

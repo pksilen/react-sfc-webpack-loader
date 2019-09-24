@@ -10,7 +10,7 @@ module.exports = function(htmlSource) {
   const scriptElements = htmlRootElement.querySelectorAll('script');
 
   if (scriptElements.length !== 1) {
-    this.emitError(`There must exactly one <script>...</script> block in ${this.resource}`);
+    this.emitError(`There must be exactly one <script>...</script> block in ${this.resource}`);
     return '';
   }
 
