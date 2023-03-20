@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/pksilen/react-sfc-webpack-loader#readme",
   "devDependencies": {
-    "jest": "^24.9.0",
+    "jest": "^29.5.0",
     "prettier": "^1.18.2"
   },
   "dependencies": {
